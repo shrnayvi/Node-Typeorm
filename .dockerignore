@@ -1,0 +1,8 @@
+node_modules
+.husky
+.git
+.eslintrc.json
+.prettierrc.json
+Dockerfile
+.docker-compose.yml
+.docker-compose.prod.yml

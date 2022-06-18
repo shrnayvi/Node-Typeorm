@@ -1,0 +1,269 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-06-18T16:31:25.561Z",
+  "__export_source": "insomnia.desktop.app:v7.1.1",
+  "resources": [
+    {
+      "_id": "req_dc93a8db690b43d7a87bf765405e7925",
+      "authentication": {
+        "token": "{% response 'body', 'req_3c9e247d63ea44e3abd7232f88fa935f', 'b64::JC5kYXRhLmxvZ2luLnRva2Vu::46b', 'never' %}",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query($input: UserQueryInput) {\\n  users(input: $input) {\\n    paging {\\n      total\\n      startIndex\\n      endIndex\\n      hasNextPage\\n    }\\n    data {\\n      id\\n      email\\n      name\\n      phone\\n    }\\n  }\\n}\",\"variables\":{\"input\":{\"paging\":{\"skip\":0}}}}"
+      },
+      "created": 1655400838901,
+      "description": "",
+      "headers": [
+        { "id": "pair_782da0c897df4c3d94ef214372bed61e", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1655400838901,
+      "method": "POST",
+      "modified": 1655569269937,
+      "name": "users",
+      "parameters": [],
+      "parentId": "fld_267ddc30b79448739399662e4f669f4d",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ api_url  }}/{{ version  }}/graphql",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_267ddc30b79448739399662e4f669f4d",
+      "created": 1655400834848,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1655400834848,
+      "modified": 1655400834848,
+      "name": "User",
+      "parentId": "wrk_50547d24412f49df9f1a09e67b0602e1",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_50547d24412f49df9f1a09e67b0602e1",
+      "created": 1655400724400,
+      "description": "",
+      "modified": 1655400746203,
+      "name": "Node-Typeorm",
+      "parentId": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_1145c16b400142889bb33ec446a195a2",
+      "authentication": {
+        "token": "{% response 'body', 'req_3c9e247d63ea44e3abd7232f88fa935f', 'b64::JC5kYXRhLmxvZ2luLnRva2Vu::46b', 'never' %}",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query($id: String) {\\n  user(id: $id) {\\n    id\\n    email\\n    name\\n    phone\\n  }\\n}\",\"variables\":{\"id\":\"{% response 'body', 'req_3c9e247d63ea44e3abd7232f88fa935f', 'b64::JC5kYXRhLmxvZ2luLmlk::46b', 'never' %}\"}}"
+      },
+      "created": 1655569274541,
+      "description": "",
+      "headers": [
+        { "id": "pair_782da0c897df4c3d94ef214372bed61e", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1644514556119,
+      "method": "POST",
+      "modified": 1655569355667,
+      "name": "user",
+      "parameters": [],
+      "parentId": "fld_267ddc30b79448739399662e4f669f4d",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ api_url  }}/{{ version  }}/graphql",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e3070b13d22a46e2ada0637754d2e4d8",
+      "authentication": {
+        "token": "{% response 'body', 'req_3c9e247d63ea44e3abd7232f88fa935f', 'b64::JC5kYXRhLmxvZ2luLnRva2Vu::46b', 'never' %}",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation($input: UserCreateInput!) {\\n  userCreate(input: $input) {\\n    id\\n    email\\n    phone\\n  }\\n}\",\"variables\":{\"input\":{\"email\":\"user2324@yopmail.com\",\"password\":\"password\",\"name\":\"User\",\"phone\":\"9812348175\",\"roles\":[\"User\"]}}}"
+      },
+      "created": 1655569364554,
+      "description": "",
+      "headers": [
+        { "id": "pair_782da0c897df4c3d94ef214372bed61e", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1639071414728,
+      "method": "POST",
+      "modified": 1655569436090,
+      "name": "userCreate",
+      "parameters": [],
+      "parentId": "fld_267ddc30b79448739399662e4f669f4d",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ api_url  }}/{{ version  }}/graphql",
+      "_type": "request"
+    },
+    {
+      "_id": "req_d4128900b8294519a73a9835a9a95c2a",
+      "authentication": {
+        "token": "{% response 'body', 'req_3c9e247d63ea44e3abd7232f88fa935f', 'b64::JC5kYXRhLmxvZ2luLnRva2Vu::46b', 'never' %}",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation($input: UserUpdateInput!) {\\n  userUpdate(input: $input) {\\n    id\\n    email\\n    phone\\n  }\\n}\",\"variables\":{\"input\":{\"id\":\"{% response 'body', 'req_e3070b13d22a46e2ada0637754d2e4d8', 'b64::JC5kYXRhLnVzZXJDcmVhdGUuaWQ=::46b', 'never' %}\",\"name\":\"User\",\"phone\":\"9812348175\"}}}"
+      },
+      "created": 1655569445173,
+      "description": "",
+      "headers": [
+        { "id": "pair_782da0c897df4c3d94ef214372bed61e", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1636349844032.5,
+      "method": "POST",
+      "modified": 1655569496244,
+      "name": "userUpdate",
+      "parameters": [],
+      "parentId": "fld_267ddc30b79448739399662e4f669f4d",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ api_url  }}/{{ version  }}/graphql",
+      "_type": "request"
+    },
+    {
+      "_id": "req_3c9e247d63ea44e3abd7232f88fa935f",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation($input: LoginInput!) {\\n  login(input: $input) {\\n    id\\n    token\\n    roles {\\n      id\\n      name\\n    }\\n  }\\n}\",\"variables\":{\"input\":{\"email\":\"admin@admin.com\",\"password\":\"password\"}}}"
+      },
+      "created": 1655401441193,
+      "description": "",
+      "headers": [
+        { "id": "pair_782da0c897df4c3d94ef214372bed61e", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1655400838901,
+      "method": "POST",
+      "modified": 1655569277758,
+      "name": "login",
+      "parameters": [],
+      "parentId": "fld_22e7288bdfbb453bbaa09406f628230b",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ api_url  }}/{{ version  }}/graphql",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_22e7288bdfbb453bbaa09406f628230b",
+      "created": 1655401441190,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1649566196965,
+      "modified": 1655401447978,
+      "name": "Auth",
+      "parentId": "wrk_50547d24412f49df9f1a09e67b0602e1",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_0753177127b5469991689f99f07ea6b3",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation($input: RegisterInput!) {\\n  register(input: $input)\\n}\",\"variables\":{\"input\":{\"email\":\"user2345@yopomail.com\",\"password\":\"password\",\"name\":\"User\",\"phone\":\"9841883333\"}}}"
+      },
+      "created": 1655569506054,
+      "description": "",
+      "headers": [
+        { "id": "pair_782da0c897df4c3d94ef214372bed61e", "name": "Content-Type", "value": "application/json" }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1649957697510,
+      "method": "POST",
+      "modified": 1655569859393,
+      "name": "register",
+      "parameters": [],
+      "parentId": "fld_22e7288bdfbb453bbaa09406f628230b",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ api_url  }}/{{ version  }}/graphql",
+      "_type": "request"
+    },
+    {
+      "_id": "env_75fd3ea76c140ad36ede01bcc084b0fc4408d70a",
+      "color": null,
+      "created": 1655400725205,
+      "data": { "api_url": "http://localhost:8080", "version": "v1" },
+      "dataPropertyOrder": { "&": ["api_url", "version"] },
+      "isPrivate": false,
+      "metaSortKey": 1655400725205,
+      "modified": 1655400786995,
+      "name": "Base Environment",
+      "parentId": "wrk_50547d24412f49df9f1a09e67b0602e1",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_75fd3ea76c140ad36ede01bcc084b0fc4408d70a",
+      "cookies": [],
+      "created": 1655400725234,
+      "modified": 1655400725234,
+      "name": "Default Jar",
+      "parentId": "wrk_50547d24412f49df9f1a09e67b0602e1",
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "env_7eb6c1823d5d4e988a94ea9fb720dc30",
+      "color": "#f34343",
+      "created": 1655400792298,
+      "data": { "email": "user@user.com", "password": "password" },
+      "dataPropertyOrder": { "&": ["email", "password"] },
+      "isPrivate": false,
+      "metaSortKey": 1655400792298,
+      "modified": 1655569131738,
+      "name": "Local(User)",
+      "parentId": "env_75fd3ea76c140ad36ede01bcc084b0fc4408d70a",
+      "_type": "environment"
+    },
+    {
+      "_id": "env_0ac3bb72e5e54269a32bf7c730232c32",
+      "color": "#3736ed",
+      "created": 1655569142496,
+      "data": { "email": "admin@admin.com", "password": "password" },
+      "dataPropertyOrder": { "&": ["email", "password"] },
+      "isPrivate": false,
+      "metaSortKey": 1655400792348,
+      "modified": 1655569171047,
+      "name": "Local(Admin)",
+      "parentId": "env_75fd3ea76c140ad36ede01bcc084b0fc4408d70a",
+      "_type": "environment"
+    }
+  ]
+}

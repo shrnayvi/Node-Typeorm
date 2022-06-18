@@ -1,0 +1,18 @@
+export default {
+  userAlreadyExists: 'User already exists',
+  userNotFound: 'User not found',
+  idRequired: 'Id is required',
+  emailRequired: 'Email must be valid non empty string',
+  passwordRequired: 'Password required',
+  nameRequired: 'Name required',
+  descriptionRequired: 'Name required',
+  emailNotValid: 'Email not valid',
+  phoneRequired: 'Phone required',
+  resourceNotFound: 'Resource not found',
+  rolesRequired: 'Roles required',
+  roleNotExist: 'One of the roles is not a valid role',
+  tokenRequired: 'Token required',
+  userNotAuthenticated: 'User not authenticated',
+  emailPasswordNotCorrect: 'Email or password is not correct',
+  notAllowedToPerformAction: 'User is not allowed to perform action',
+};
